@@ -1,0 +1,515 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300ita‌​lic,400italic,500,500italic,700,700italic,900italic,900);
+html, body, html * {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+	background-color: #F7F7F7;
+	margin: 25px;
+}
+
+/*Loading Screen */
+
+.loader-idle {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	visibility: hidden;
+}
+
+.loader {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader > img {
+    width: 40px;
+}
+
+.loader.hidden {
+	animation: fadeOut 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/*End Loading Screen */
+
+/*New Search Button*/
+
+.new_search_button {
+	visibility:hidden;
+}
+
+.new_search_button_visible{
+	position:absolute;
+	z-index: 95;
+	display: flex;
+	border: none;
+	border-radius: 2px;
+	padding: 12px 18px;
+	font-size: 16px;
+	text-transform: uppercase;
+	cursor: pointer;
+	color: white;
+	background-color: #2196f3;
+	box-shadow: 0 0 4px #999;
+	outline: none;
+	transition: background 0.8s;
+}
+
+.new_search_button:hover {
+	background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
+}
+
+.new_search_button:active {
+	background-color: #6eb9f7;
+	background-size: 100%;
+	transition: background 0s;
+}
+
+/* New search button ends */
+
+.search_div {
+	width: 100%;
+	display: flex;
+}
+
+.search_bar {
+	float: left;
+	height: 2rem;
+	width: 80%;
+	margin: 7.5px 7.5px 7.5px 0px;
+	padding: 12px;
+	font-size: 20px;
+	border: none;
+	outline: none;
+	border-radius: 25px;
+	-webkit-box-shadow: -6px 11px 22px 0px rgb(255, 255, 255);
+	box-shadow: -6px 11px 22px 0px rgb(122, 121, 121);
+	transition: all 0.3s ease-in;
+	transition-delay: .1s;
+}
+
+.search_bar_hidden {
+	float: left;
+	height: 2rem;
+	width: 80%;
+	margin: 7.5px 7.5px 7.5px 0px;
+	padding: 12px;
+	font-size: 20px;
+	border: none;
+	outline: none;
+	border-radius: 25px;
+	-webkit-box-shadow: -6px 11px 22px 0px rgb(255, 255, 255);
+	box-shadow: -6px 11px 22px 0px rgb(122, 121, 121);
+	transition: all 0.3s ease-in;
+	transition-delay: .1s;
+	visibility: hidden;
+}
+
+
+.search_query {
+	transition: all 0.3s ease-in;
+	transition-delay: .1s;
+}
+
+.search_bar::placeholder {
+	opacity: 0.5;
+}
+
+.search_button {
+	position: relative;
+	height: 32px;
+	right: 45px;
+	top: 20px;
+	transition: all 0.3s ease-in;
+	transition-delay: .1s;
+}
+
+.search_button_hidden {
+	position: relative;
+	height: 32px;
+	right: 45px;
+	top: 20px;
+	transition: all 0.3s ease-in;
+	transition-delay: .1s;
+	visibility: hidden;
+}
+
+.search_query {
+	width: 45%;
+}
+
+.search_query:hover{
+	width: 55%;
+}
+
+.search_query:hover>.search_bar {
+	font-size: 27px;
+	width: 80%;
+	height: 2.4rem;
+}
+
+.search_query:hover>.search_button {
+	height: 48px;
+	right: 67.5px;
+	top: 16px;
+}
+
+#find_best_deal {
+	color: #003CEA;
+	margin: 10px 10px 10px 120px;
+	font-size: 3.5rem;
+	
+	
+}
+
+#select_websites {
+	color: #007FC7;
+	margin: 10px 10px 10px 0px;
+	font-size: 2rem;
+	
+}
+
+.number_of_search_results {
+	color: #007FC7;
+	font-size: 2rem;
+	margin: auto 0;
+	margin-right: 10px;
+	text-align:right;
+	font-weight: bold;
+}
+
+
+
+
+
+/* Select element start*/
+.select_results {
+	width: 50px;
+	float: center;
+	height: 2rem;
+	margin: 7.5px 7.5px 7.5px 0px;
+	padding: 12px;
+	font-size: 20px;
+	border: none;
+	outline: none;
+	
+
+	
+	
+}
+
+#select {
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+select {
+	font-size: 100%;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: bold;
+	cursor: pointer;
+	border-radius: 25px;
+	background-color: #ffffff;
+	border: none;
+	border-bottom: 2px solid #ffffff;
+	color: rgb(0, 0, 0);
+	padding: 10px;
+	padding-right: 38px;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	box-shadow: 7.5px 7.5px 7.5px 0px rgb(122, 121, 121);
+	/* Adding transition effect */
+	transition: color 0.3s ease, background-color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+select:hover,
+select:focus {
+	color: #00090a;
+	background-color: white;
+	border-bottom-color: #DCDCDC;
+}
+
+
+/* Select element end*/
+
+
+/* Checkbox css start*/
+
+.selection_container {
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	margin: auto 0;
+	width: 50%;
+	
+}
+.image{
+	float:right;
+	margin-left: 120px;
+	width: 150px;
+	
+	
+}
+
+.checkbox_label {
+	padding-left: 0;
+}
+
+.checkbox_div {
+	flex: 50vh;
+	width: 80px;
+	height: 26px;
+	background: #000000;
+	margin: 20px auto;
+	position: relative;
+	border-radius: 50px;
+	box-shadow: inset 0px 1px 1px #000000;
+	margin-left: 25%;
+}
+
+.checkbox_div:after {
+	content: 'OFF';
+	color: rgb(255, 208, 0);
+	position: absolute;
+	right: 10px;
+	z-index: 0;
+	font: 12px/26px Arial, sans-serif;
+	font-weight: bold;
+	text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.15);
+}
+
+.checkbox_div:before {
+	content: 'ON';
+	color: #ff0000;
+	position: absolute;
+	left: 10px;
+	z-index: 0;
+	font: 12px/26px Arial, sans-serif;
+	font-weight: bold;
+}
+
+.checkbox_div label {
+	display: block;
+	width: 34px;
+	height: 20px;
+	cursor: pointer;
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	z-index: 1;
+	background: #fcfff4;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fcfff4), color-stop(40%, #dfe5d7), to(#b3bead));
+	background: linear-gradient(to bottom, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+	border-radius: 50px;
+	-webkit-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+	box-shadow: 0px 2px 5px 0px #000000;
+}
+
+.checkbox_div input[type=checkbox] {
+	visibility: hidden;
+}
+
+.checkbox_div input[type=checkbox]:checked+label {
+	left: 43px;
+}
+
+.checkbox_label {
+	margin: auto;
+	margin-right: 1rem;
+	font-size: 2rem;
+	font-family: sans-serif;
+	color: white;
+	font-weight: bold;
+	text-shadow: rgb(64, 116, 181) 2px 2px 0px, rgb(64, 116, 181) 2px -2px 0px, rgb(64, 116, 181) -2px 2px 0px, rgb(64, 116, 181) -2px -2px 0px, rgb(64, 116, 181) 2px 0px 0px, rgb(64, 116, 181) 0px 2px 0px, rgb(64, 116, 181) -2px 0px 0px, rgb(64, 116, 181) 0px -2px 0px;
+}
+
+
+/* Checkbox css end*/
+
+
+/* results css starts */
+
+#results_title {
+	color: #007FC7;
+	margin: 10px 10px 10px 0px;
+	font-size: 2rem;
+}
+
+.results_div {
+	margin: 10px;
+	margin-left: 0px;
+	margin-top: auto;
+	word-wrap: break-word;
+	width :100%;
+	
+}
+
+.results_div>div {
+	background-color: #ffffff;
+	margin-bottom: 40px;
+	padding: 10px;
+	box-shadow: -6px 11px 22px 0px rgb(122, 121, 121);
+}
+
+.results_product_title {
+	color: rgb(255, 0, 0);
+	margin: 10px 5px 5px 0px;
+	font-size: 2rem;
+}
+
+.results_products_item_title {
+	color: #00d7fd;
+	margin: 5px;
+	font-size: 1.7rem;
+}
+
+.results_products_item_subtitle {
+	color: #000000;
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-right: 10px;
+	display: inline-block;
+}
+
+
+.results_products_details {
+	color: #0400fc;
+	margin: 2px;
+	margin-left: 10px;
+	font-size: 1.3rem;
+	display: block;
+}
+
+.error_text {
+	color: black;
+	margin: 2px;
+	margin-left: 10px;
+	font-size: 1.5rem;
+}
+
+
+/* results css ends*/
+
+
+/* Download Button css starts */
+
+.download_button {
+	border: none;
+	border-radius: 2px;
+	padding: 12px 18px;
+	font-size: 16px;
+	text-transform: uppercase;
+	cursor: pointer;
+	color: white;
+	background-color: #2196f3;
+	box-shadow: 0 0 4px #999;
+	outline: none;
+	margin: 0 auto 30px auto;
+	display: block;
+	background-position: center;
+	transition: background 0.8s;
+	
+}
+
+
+
+.download_button:hover {
+	background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
+}
+
+.download_button:active {
+	background-color: #6eb9f7;
+	background-size: 100%;
+	transition: background 0s;
+}
+
+
+/* Download Button css ends */
+
+/* Media Query starts */
+
+
+@media (max-width:875px) {
+	body {
+		margin: 10px;
+	}
+	.search_div {
+		width: 100%;
+		display: block;
+	}
+
+	.search_query {
+		width: 100%;
+		display: flex;
+		font-size: 16px;
+	}
+	.search_query:hover{
+		width: 100%;
+	}
+
+	.search_bar{
+		width: 100%;
+		font-size: 18px;
+	}
+
+	.search_bar:focus::placeholder {
+	  color: transparent;
+	}
+
+	.search_button{
+		position: relative;
+		top: 20px;
+	}
+
+  #find_best_deal {
+	  font-size: 2.5rem;
+	}
+
+	.number_of_search_results {
+	width: 100%;
+	font-size: 25px;
+	margin: 10px auto;
+	text-align: center;
+	}
+	.select_results{
+	margin: auto auto;
+	}
+	#select_websites {
+    font-size: 2.25rem;
+	}
+	.checkbox_label {
+	  font-size: 1.65rem;
+	}
+
+	.selection_container {
+		grid-template-columns: auto auto;
+		width: 90%;
+	}
+
+}
+/* Media Query ends */

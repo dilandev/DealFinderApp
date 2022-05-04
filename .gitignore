@@ -1,0 +1,6 @@
+//what file app is ignore
+
+
+.vscode
+__pycache__
+
