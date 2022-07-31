@@ -1,3 +1,4 @@
+from queue import PriorityQueue
 import requests
 from bs4 import BeautifulSoup
 import time
@@ -25,25 +26,25 @@ def search_amazon(product, total_products_count):
                 'DNT' : '1', # Do Not Track Request Header 
                 'Connection' : 'close'
             }
-            response = requests.get(url, headers=headers)
+            response = requests.get(url, headers=headers).text
 
-            soup = BeautifulSoup(response.content, 'lxml')
+            soup = BeautifulSoup(response, 'lxml')
             return soup
 
         def getdeals(soup):
             item_div = soup.find_all('div', {'data-component-type': 's-search-result'})
-
+            item_div = item_div + soup.find_all('div', {'cel_widget_id': 'MAIN-SEARCH_RESULTS-2'})
+                        
             for item in item_div:
                 #Getting item name
-                item_name = item.find('a', {'class': 'a-link-normal a-text-normal'}).text.strip()
-
+                item_name = item.find('a', {'class': 'a-link-normal s-underline-text s-underline-link-text s-link-style a-text-normal'}).text.strip()
+                
                 #Getting item rating
                 try:
                     item_rating = item.find('span', {'class': 'a-icon-alt'}).text.strip()
-
                 except:
                     item_rating = 'Not Available'
-
+                                
                 #Getting item price
                 try:
                     item_price = float(item.find('span', {'class': 'a-price'}).find('span',{'class':'a-offscreen'}).text.replace('$','').replace(',','').strip())
@@ -54,7 +55,7 @@ def search_amazon(product, total_products_count):
                 percentoff = round((100 - ((item_price / old_price) * 100)),2)
 
                 #Getting item link
-                item_link = item.find('a', {'class': 'a-link-normal a-text-normal'})
+                item_link = item.find('a', {'class': 'a-link-normal'})
                 item_link = "".join(['https://www.amazon.com', item_link['href']])
 
                 saleitem = {
@@ -109,7 +110,6 @@ def search_amazon(product, total_products_count):
         # Could not fetch data from Amazon
         return {}
 
-
 def search_ebay(product, total_products_count):
     try:
 
@@ -134,22 +134,9 @@ def search_ebay(product, total_products_count):
             return soup
 
         def getdeals(soup):
-            item_div = soup.find_all('div', {'class': 's-item__info clearfix'})
+            item_div = soup.find_all('li', {'class': 's-item s-item__pl-on-bottom s-item--watch-at-corner'})
 
             for item in item_div:
-
-                #Filter search results only
-                if item.find('a', {'class': 's-item__link'}) is None:
-                    continue
-
-                #Remove sponsered products
-                if item.find('a', {'class': 's-item__link'}).find('h3', {'class':'s-item__title s-item__title--has-tags'}) is not None:
-                    continue
-
-                #Remove products showing zero sold count
-                if item.find('span',{'class':'BOLD NEGATIVE'}) is None:
-                    continue
-
                 #Getting item name
                 item_name = item.find('a', {'class': 's-item__link'}).find('h3',{'class':'s-item__title'}).text.strip()
 
@@ -159,18 +146,14 @@ def search_ebay(product, total_products_count):
                     item_price_lower_range = float(item_price.split('t')[0].replace('$','').replace(',','').strip())
                 except:
                     item_price_lower_range = float(item_price.replace('$','').replace(',',''))
-
-                #Getting order count
-                item_sold_count = item.find('span',{'class':'BOLD NEGATIVE'}).text.strip()
-
+                                
                 #Getting item link
                 item_link = item.find('a', {'class': 's-item__link'})['href']
-
+                
                 saleitem = {
                     'item_name': item_name,
                     'item_price': item_price,
                     'item_price_lower_range': item_price_lower_range,
-                    'item_sold_count': item_sold_count,
                     'item_link': item_link      
                 }
 
@@ -208,7 +191,6 @@ def search_ebay(product, total_products_count):
         for x in range(total_products_count):
             ebay_products_data[x]['item_name'] = df.at[x,'item_name']
             ebay_products_data[x]['item_price'] = df.at[x,'item_price']
-            ebay_products_data[x]['item_sold_count'] = df.at[x,'item_sold_count']
             ebay_products_data[x]['item_link'] = df.at[x,'item_link']
 
         return(ebay_products_data)

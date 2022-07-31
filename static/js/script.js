@@ -16,7 +16,7 @@ $(document).ready(function () {
 		}
 	});
 
-	$('.new_search_button').on("click", function (e) {	
+	$('.navbar-brand').on("click", function (e) {	
 		e.preventDefault();
 		location.reload();
 	});
@@ -26,7 +26,7 @@ $(document).ready(function () {
 		$(".results_div").html(
 			$('<h2>').prop({
 				id: 'results_title',
-				innerHTML: 'Results:'
+				innerHTML: 'Results'
 			})
 		);
 
@@ -108,15 +108,6 @@ $(document).ready(function () {
 								})
 								$(".loader hidden").prop({
 									className: 'loader-idle'
-								})
-								$(".search_bar").prop({
-									className: 'search_bar_hidden'
-								})
-								$(".search_button").prop({
-									className: 'search_button_hidden'
-								})
-								$(".new_search_button").prop({
-									className: 'new_search_button_visible'
 								})
 							});
 						}
@@ -209,11 +200,10 @@ $(document).ready(function () {
 				function create_amazon_product_details_div(item_number, product_data, curr_checkbox_name) {
 					item_number = parseInt(item_number, 10) + 1;
 					let parent = '#' + curr_checkbox_name + '_result';
-
-
+										
 					$(parent).append(
 						$('<div>').prop({
-							innerHTML: "Item " + item_number.toString() + ":",
+							innerHTML: "Item " + item_number.toString(),
 							className: 'results_products_item_title'
 						})
 					);
@@ -305,7 +295,7 @@ $(document).ready(function () {
 
 					$(parent).append(
 						$('<div>').prop({
-							innerHTML: "Item " + item_number.toString() + ":",
+							innerHTML: "Item " + item_number.toString(),
 							className: 'results_products_item_title'
 						})
 					);
@@ -328,15 +318,7 @@ $(document).ready(function () {
 						})
 					);
 
-					// Order Count
-					$(parent).append(
-						$('<a>').prop({
-							innerHTML: "<div class='results_products_item_subtitle'>Orders: </div>" + product_data['item_sold_count'],
-							className: 'results_products_details'
-						})
-					);
-
-
+					
 					// Product Link
 					$(parent).append(
 						$('<a>').prop({

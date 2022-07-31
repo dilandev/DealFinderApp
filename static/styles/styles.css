@@ -5,7 +5,7 @@ html, body, html * {
 
 body {
 	background-color: #F7F7F7;
-	margin: 25px;
+	/* margin: 25px; */
 }
 
 /*Loading Screen */
@@ -55,208 +55,30 @@ body {
 
 /*End Loading Screen */
 
-/*New Search Button*/
-
-.new_search_button {
-	visibility:hidden;
-}
-
-.new_search_button_visible{
-	position:absolute;
-	z-index: 95;
-	display: flex;
-	border: none;
-	border-radius: 2px;
-	padding: 12px 18px;
-	font-size: 16px;
-	text-transform: uppercase;
-	cursor: pointer;
-	color: white;
-	background-color: #2196f3;
-	box-shadow: 0 0 4px #999;
-	outline: none;
-	transition: background 0.8s;
-}
-
-.new_search_button:hover {
-	background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
-}
-
-.new_search_button:active {
-	background-color: #6eb9f7;
-	background-size: 100%;
-	transition: background 0s;
-}
-
-/* New search button ends */
-
 .search_div {
 	width: 100%;
 	display: flex;
 }
 
-.search_bar {
-	float: left;
-	height: 2rem;
-	width: 80%;
-	margin: 7.5px 7.5px 7.5px 0px;
-	padding: 12px;
-	font-size: 20px;
-	border: none;
-	outline: none;
-	border-radius: 25px;
-	-webkit-box-shadow: -6px 11px 22px 0px rgb(255, 255, 255);
-	box-shadow: -6px 11px 22px 0px rgb(122, 121, 121);
-	transition: all 0.3s ease-in;
-	transition-delay: .1s;
+.search_bar{
+	border-radius: 0%;
 }
 
-.search_bar_hidden {
-	float: left;
-	height: 2rem;
-	width: 80%;
-	margin: 7.5px 7.5px 7.5px 0px;
-	padding: 12px;
-	font-size: 20px;
-	border: none;
-	outline: none;
-	border-radius: 25px;
-	-webkit-box-shadow: -6px 11px 22px 0px rgb(255, 255, 255);
-	box-shadow: -6px 11px 22px 0px rgb(122, 121, 121);
-	transition: all 0.3s ease-in;
-	transition-delay: .1s;
-	visibility: hidden;
+#search_button{
+	border-radius: 0%;
+	background-color: #212529;
 }
 
-
-.search_query {
-	transition: all 0.3s ease-in;
-	transition-delay: .1s;
+#select_number{
+	border-radius: 0%;
+	width: 100px;
 }
 
-.search_bar::placeholder {
-	opacity: 0.5;
-}
-
-.search_button {
-	position: relative;
-	height: 32px;
-	right: 45px;
-	top: 20px;
-	transition: all 0.3s ease-in;
-	transition-delay: .1s;
-}
-
-.search_button_hidden {
-	position: relative;
-	height: 32px;
-	right: 45px;
-	top: 20px;
-	transition: all 0.3s ease-in;
-	transition-delay: .1s;
-	visibility: hidden;
-}
-
-.search_query {
-	width: 45%;
-}
-
-.search_query:hover{
-	width: 55%;
-}
-
-.search_query:hover>.search_bar {
-	font-size: 27px;
-	width: 80%;
-	height: 2.4rem;
-}
-
-.search_query:hover>.search_button {
-	height: 48px;
-	right: 67.5px;
-	top: 16px;
-}
-
-#find_best_deal {
+#deal_logo {
 	color: #003CEA;
-	margin: 10px 10px 10px 120px;
+	/* margin: 10px 10px 10px 120px; */
 	font-size: 3.5rem;
-	
-	
 }
-
-#select_websites {
-	color: #007FC7;
-	margin: 10px 10px 10px 0px;
-	font-size: 2rem;
-	
-}
-
-.number_of_search_results {
-	color: #007FC7;
-	font-size: 2rem;
-	margin: auto 0;
-	margin-right: 10px;
-	text-align:right;
-	font-weight: bold;
-}
-
-
-
-
-
-/* Select element start*/
-.select_results {
-	width: 50px;
-	float: center;
-	height: 2rem;
-	margin: 7.5px 7.5px 7.5px 0px;
-	padding: 12px;
-	font-size: 20px;
-	border: none;
-	outline: none;
-	
-
-	
-	
-}
-
-#select {
-	appearance: none;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-}
-
-select {
-	font-size: 100%;
-	font-family: 'Source Sans Pro', sans-serif;
-	font-weight: bold;
-	cursor: pointer;
-	border-radius: 25px;
-	background-color: #ffffff;
-	border: none;
-	border-bottom: 2px solid #ffffff;
-	color: rgb(0, 0, 0);
-	padding: 10px;
-	padding-right: 38px;
-	appearance: none;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	box-shadow: 7.5px 7.5px 7.5px 0px rgb(122, 121, 121);
-	/* Adding transition effect */
-	transition: color 0.3s ease, background-color 0.3s ease, border-bottom-color 0.3s ease;
-}
-
-select:hover,
-select:focus {
-	color: #00090a;
-	background-color: white;
-	border-bottom-color: #DCDCDC;
-}
-
-
-/* Select element end*/
-
 
 /* Checkbox css start*/
 
@@ -267,12 +89,11 @@ select:focus {
 	width: 50%;
 	
 }
+
 .image{
 	float:right;
 	margin-left: 120px;
 	width: 150px;
-	
-	
 }
 
 .checkbox_label {
@@ -283,11 +104,11 @@ select:focus {
 	flex: 50vh;
 	width: 80px;
 	height: 26px;
-	background: #000000;
+	background: #212529;
 	margin: 20px auto;
 	position: relative;
 	border-radius: 50px;
-	box-shadow: inset 0px 1px 1px #000000;
+	box-shadow: inset 0px 1px 1px #212529;
 	margin-left: 25%;
 }
 
@@ -304,7 +125,7 @@ select:focus {
 
 .checkbox_div:before {
 	content: 'ON';
-	color: #ff0000;
+	color: #ffffff;
 	position: absolute;
 	left: 10px;
 	z-index: 0;
@@ -327,7 +148,7 @@ select:focus {
 	border-radius: 50px;
 	-webkit-transition: all 0.4s ease;
 	transition: all 0.4s ease;
-	box-shadow: 0px 2px 5px 0px #000000;
+	box-shadow: 0px 2px 5px 0px #212529;
 }
 
 .checkbox_div input[type=checkbox] {
@@ -348,70 +169,64 @@ select:focus {
 	text-shadow: rgb(64, 116, 181) 2px 2px 0px, rgb(64, 116, 181) 2px -2px 0px, rgb(64, 116, 181) -2px 2px 0px, rgb(64, 116, 181) -2px -2px 0px, rgb(64, 116, 181) 2px 0px 0px, rgb(64, 116, 181) 0px 2px 0px, rgb(64, 116, 181) -2px 0px 0px, rgb(64, 116, 181) 0px -2px 0px;
 }
 
-
 /* Checkbox css end*/
-
 
 /* results css starts */
 
 #results_title {
-	color: #007FC7;
+	color: #fff;
+	background-color: #212529;
+	padding: 10px;
 	margin: 10px 10px 10px 0px;
 	font-size: 2rem;
 }
 
 .results_div {
-	margin: 10px;
-	margin-left: 0px;
-	margin-top: auto;
 	word-wrap: break-word;
 	width :100%;
-	
 }
 
 .results_div>div {
 	background-color: #ffffff;
 	margin-bottom: 40px;
-	padding: 10px;
-	box-shadow: -6px 11px 22px 0px rgb(122, 121, 121);
+	padding: 20px;
+	border: 1px solid #ced4da;
 }
 
 .results_product_title {
-	color: rgb(255, 0, 0);
+	color: #212529;
 	margin: 10px 5px 5px 0px;
 	font-size: 2rem;
 }
 
 .results_products_item_title {
-	color: #00d7fd;
-	margin: 5px;
-	font-size: 1.7rem;
+	font-weight: 600;
+	color: #003CEA;
+	padding-top: 5px;
+	font-size: 1.4rem;
 }
 
 .results_products_item_subtitle {
-	color: #000000;
-	font-size: 1.5rem;
+	color: #212529;
+	font-size: 1.2rem;
 	font-weight: bold;
-	margin-right: 10px;
 	display: inline-block;
 }
-
 
 .results_products_details {
 	color: #0400fc;
 	margin: 2px;
 	margin-left: 10px;
-	font-size: 1.3rem;
+	font-size: 1.2rem;
 	display: block;
 }
 
 .error_text {
-	color: black;
+	color: #212529;
 	margin: 2px;
 	margin-left: 10px;
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 }
-
 
 /* results css ends*/
 
@@ -426,8 +241,8 @@ select:focus {
 	text-transform: uppercase;
 	cursor: pointer;
 	color: white;
-	background-color: #2196f3;
-	box-shadow: 0 0 4px #999;
+	background-color: #212529;
+	box-shadow: 0 0 4px #212529;
 	outline: none;
 	margin: 0 auto 30px auto;
 	display: block;
@@ -435,8 +250,6 @@ select:focus {
 	transition: background 0.8s;
 	
 }
-
-
 
 .download_button:hover {
 	background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
@@ -453,7 +266,6 @@ select:focus {
 
 /* Media Query starts */
 
-
 @media (max-width:875px) {
 	body {
 		margin: 10px;
@@ -463,45 +275,10 @@ select:focus {
 		display: block;
 	}
 
-	.search_query {
-		width: 100%;
-		display: flex;
-		font-size: 16px;
-	}
-	.search_query:hover{
-		width: 100%;
-	}
-
-	.search_bar{
-		width: 100%;
-		font-size: 18px;
-	}
-
-	.search_bar:focus::placeholder {
-	  color: transparent;
-	}
-
-	.search_button{
-		position: relative;
-		top: 20px;
-	}
-
-  #find_best_deal {
+  	#find_best_deal {
 	  font-size: 2.5rem;
 	}
-
-	.number_of_search_results {
-	width: 100%;
-	font-size: 25px;
-	margin: 10px auto;
-	text-align: center;
-	}
-	.select_results{
-	margin: auto auto;
-	}
-	#select_websites {
-    font-size: 2.25rem;
-	}
+	
 	.checkbox_label {
 	  font-size: 1.65rem;
 	}
