@@ -13,7 +13,9 @@ In today's world, people have so many possibilities when deciding to buy somethi
 * Requests
 * BeautifulSoup4
 * Gunicorn
+* Numpy
 * Pandas
+* Lxml
 
 ### Steps
 
@@ -25,7 +27,7 @@ Install pip virtual environment and create a virtual environment
 
 Install required packages in the virtual environment
 
-`pipenv install Flask Requests BeautifulSoup4 Gunicorn Pandas`
+`pipenv install -r requirements.txt`
 
 Clone this repo to your local machine using 
 
@@ -41,6 +43,5 @@ View the output at http://localhost:5000/
 
 ## Screenshots
 
-<img width="960" alt="Screenshot_1" src="https://user-images.githubusercontent.com/69090976/166664839-24ce4072-1bcf-42f2-a5ad-a8fba5e565a0.png">
+![Screenshot_1](https://user-images.githubusercontent.com/69090976/182029857-5cfc4307-580d-4a69-aab7-28512ac025f3.png)
 
-<img width="960" alt="Screenshot_2" src="https://user-images.githubusercontent.com/69090976/166664875-e9a7f67e-3558-4f15-b332-9faf3904fbf6.png">
