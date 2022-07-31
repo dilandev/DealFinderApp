@@ -3,6 +3,9 @@
 
 In today's world, people have so many possibilities when deciding to buy something online. Oftentimes people get deceived by seller marketing tactics and end up buying at a higher price while they could buy the same product at a lower price. Deal Finder App is a web scraping/web crawling based application developed to autimatically search deals from a selected set of popular e-commerce websites in Sri Lanka.
 
+> View online: https://dealfinderapp.herokuapp.com/
+
+
 ## Getting Started
 
 * Python version used: 3.10.4
